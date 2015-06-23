@@ -15,13 +15,11 @@ public class EmployeesService {
 	
 	public void setRecuperable (IRecuperable tipo_oDAO)
 	{
-		System.out.println("EmployeesService - setRecuperable");
 		this.eDAO = tipo_oDAO;
 	}
 	
 	public Object obtenerEmpleado(int id)
 	{
-		System.out.println("EmployeesService - obtenerEmpleado");
 		Object e = null;
 		e = this.eDAO.leerEmpleado(id);
 		return e;

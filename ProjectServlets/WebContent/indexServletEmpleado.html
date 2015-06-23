@@ -13,16 +13,17 @@
 <title>Mi primer proyecto</title>
 </head>
 <body class="page-home">
-
-<form action="DatosEmpleado" method="get">
-	<p>Id de empleado: <input type="text" name="id_empleado"></p>
-	<p>Selecciona el tipo de conexión
-		<select name="tipo_conexion">
-  			<option value="JDBC">JDBC</option>
-  			<option value="HIBERNATE">Hibernate</option>
-		</select>
-	</p>
+<p>
+	<form action="DatosEmpleadoJDBC" method="get">
+		Id de empleado: <input type="text" name="id_empleado">
+		<input type="submit" value="BUSCAR">
+	</form>
+</p>
+<p>
+	<form action="DatosEmpleadoHIBERNATE" method="get">
+	Id de empleado: <input type="text" name="id_empleado">
 	<input type="submit" value="BUSCAR">
-</form>
+	</form>
+</p>
 </body>
 </html>

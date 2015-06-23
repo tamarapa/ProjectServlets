@@ -1,19 +1,19 @@
 package comun;
 
-import hibernate.service.SessionManager;
-
-import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import org.hibernate.SessionFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ImplServerContextListener implements ServletContextListener{
+	private Logger log = LogManager.getRootLogger();
 
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
 		// TODO Auto-generated method stub
-		System.out.println("ImplServerContextListener - contextDestroyed - Contexto destruido - "+arg0.getServletContext().toString());
+		log.trace("ImplServerContextListener - contextDestroyed()");
+		//System.out.println("ImplServerContextListener - contextDestroyed - Contexto destruido - "+arg0.getServletContext().toString());
 		/*
 		ServletContext sC = null;		
 		try {
@@ -30,7 +30,8 @@ public class ImplServerContextListener implements ServletContextListener{
 	@Override
 	public void contextInitialized(ServletContextEvent arg0) {
 		// TODO Auto-generated method stub
-		System.out.println("ImplServerContextListener - contextInitialized - Contexto inicializado - "+arg0.getServletContext().toString());
+		log.trace("ImplServerContextListener - contextInitialized()");
+		//System.out.println("ImplServerContextListener - contextInitialized - Contexto inicializado - "+arg0.getServletContext().toString());
 		/*
 		SessionFactory sf = SessionManager.getSessionFactory();
 		ServletContext servletContext = null;

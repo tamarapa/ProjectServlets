@@ -11,6 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
+
 public class Pool {
 	
 	private static final String fuente = "java:comp/env/jdbc/pool";

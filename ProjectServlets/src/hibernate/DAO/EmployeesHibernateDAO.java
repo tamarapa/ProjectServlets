@@ -24,7 +24,7 @@ public class EmployeesHibernateDAO extends SuperClassDAO implements IRecuperable
 	public Object leerEmpleado(int id) {
 		// TODO Auto-generated method stub
 		Employees e1 = null;
-		log.trace("EmployeesService - obtenerEmpleado() - INICIO");
+
 		Transaction transaction = null;
 		Session s = SessionManager.obtenerSesionNueva();
 		try 
@@ -41,7 +41,7 @@ public class EmployeesHibernateDAO extends SuperClassDAO implements IRecuperable
     	finally 
     	{
     		SessionManager.cerrarSession(s);
-    		log.trace("obtenerEmpleado() FIN");
+    		log.trace("EmployeesService - obtenerEmpleado() - INICIO");
     	}
 		return e1;
 	}

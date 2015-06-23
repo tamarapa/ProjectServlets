@@ -12,27 +12,31 @@ import javax.servlet.ServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ImplFilter implements Filter {
+
+public class ImplFilterJDBC implements Filter {
 	
-	private final static Logger log = LogManager.getRootLogger();
+	private Logger log = LogManager.getRootLogger();
 
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
-		log.trace("ImplFilter - destroy()");
+		log.trace("ImplFilterJDBC - destroy()");
 	}
 
 	@Override
 	public void doFilter(ServletRequest arg0, ServletResponse arg1,
 			FilterChain arg2) throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		log.trace("ImplFilter - doFilter()");
+		long tiempo1 = System.currentTimeMillis();
+		arg2.doFilter(arg0, arg1);
+		long tiempo2 = System.currentTimeMillis();
+		log.trace("ImplFilterJDBC - doFilter() - "+(tiempo2-tiempo1));
 	}
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
 		// TODO Auto-generated method stub
-		log.trace("ImplFilter - init()");
+		log.trace("ImplFilterJDBC - init()");
 	}
 
 }

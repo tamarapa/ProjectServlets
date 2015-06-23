@@ -26,14 +26,25 @@
 	</servlet-mapping>
 
 	<servlet>
-		<description>Servlet Datos de Empleado</description>
-		<display-name>ServletDatosEmpleado</display-name>
-		<servlet-name>ServletDatosEmpleado</servlet-name>
-		<servlet-class>comun.ServletEmpleados</servlet-class>
+		<description>Servlet Datos de Empleado JDBC</description>
+		<display-name>ServletDatosEmpleadoJDBC</display-name>
+		<servlet-name>ServletDatosEmpleadoJDBC</servlet-name>
+		<servlet-class>comun.ServletEmpleadosJDBC</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>ServletDatosEmpleado</servlet-name>
-		<url-pattern>/DatosEmpleado</url-pattern>
+		<servlet-name>ServletDatosEmpleadoJDBC</servlet-name>
+		<url-pattern>/DatosEmpleadoJDBC</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>Servlet Datos de Empleado HIBERNATE</description>
+		<display-name>ServletDatosEmpleadoHIBERNATE</display-name>
+		<servlet-name>ServletDatosEmpleadoHIBERNATE</servlet-name>
+		<servlet-class>comun.ServletEmpleadosHIBERNATE</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDatosEmpleadoHIBERNATE</servlet-name>
+		<url-pattern>/DatosEmpleadoHIBERNATE</url-pattern>
 	</servlet-mapping>
 
 	<listener>
@@ -47,12 +58,21 @@
 	</listener>
 
 	<filter>
-		<filter-name>mifiltro</filter-name>
-		<filter-class>comun.ImplFilter</filter-class>
+		<filter-name>FiltroJDBC</filter-name>
+		<filter-class>comun.ImplFilterJDBC</filter-class>
 	</filter>
 	<filter-mapping>
-		<filter-name>mifiltro</filter-name>
-		<url-pattern>/DatosEmpleado</url-pattern> <!--Servicio llamado -->
+		<filter-name>FiltroJDBC</filter-name>
+		<url-pattern>/DatosEmpleadoJDBC</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>FiltroHIBERNATE</filter-name>
+		<filter-class>comun.ImplFilterHIBERNATE</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>FiltroHIBERNATE</filter-name>
+		<url-pattern>/DatosEmpleadoHIBERNATE</url-pattern>
 	</filter-mapping>
 
 </web-app>
