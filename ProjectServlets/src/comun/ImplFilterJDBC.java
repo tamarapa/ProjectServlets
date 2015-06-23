@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -27,10 +28,15 @@ public class ImplFilterJDBC implements Filter {
 	public void doFilter(ServletRequest arg0, ServletResponse arg1,
 			FilterChain arg2) throws IOException, ServletException {
 		// TODO Auto-generated method stub
+		ServletContext sc = null;
+		sc = arg0.getServletContext();
+		int c = (int) sc.getAttribute("contador");
+		c++;
+		sc.setAttribute("contador",c);
 		long tiempo1 = System.currentTimeMillis();
 		arg2.doFilter(arg0, arg1);
 		long tiempo2 = System.currentTimeMillis();
-		log.trace("ImplFilterJDBC - doFilter() - "+(tiempo2-tiempo1));
+		log.trace("ImplFilterJDBC - doFilter() - tiempo:"+(tiempo2-tiempo1));
 	}
 
 	@Override

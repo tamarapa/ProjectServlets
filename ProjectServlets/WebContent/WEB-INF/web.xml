@@ -29,7 +29,11 @@
 		<description>Servlet Datos de Empleado JDBC</description>
 		<display-name>ServletDatosEmpleadoJDBC</display-name>
 		<servlet-name>ServletDatosEmpleadoJDBC</servlet-name>
-		<servlet-class>comun.ServletEmpleadosJDBC</servlet-class>
+		<servlet-class>comun.ServletEmpleadosJDBC</servlet-class>	
+		<init-param>
+		    <param-name>incr</param-name>
+		    <param-value>1.2</param-value>
+		</init-param>	
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ServletDatosEmpleadoJDBC</servlet-name>
@@ -73,6 +77,9 @@
 	<filter-mapping>
 		<filter-name>FiltroHIBERNATE</filter-name>
 		<url-pattern>/DatosEmpleadoHIBERNATE</url-pattern>
-	</filter-mapping>
-
+	</filter-mapping>	
+	<context-param>
+	    <param-name>saludo</param-name>
+	    <param-value>hola</param-value>
+	</context-param>
 </web-app>

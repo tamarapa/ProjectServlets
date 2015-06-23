@@ -5,6 +5,8 @@ import hibernate.DTO.Employees;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,15 +35,27 @@ public class ServletEmpleadosJDBC extends HttpServlet{
 		
 			IRecuperable i_jdbc = new EmpleadoJDBCDAO();
 			employeesService.setRecuperable(i_jdbc);
+			System.out.println(getServletContext().getInitParameter("saludo"));
+			
+			ServletConfig conf = getServletConfig();
+			System.out.println(conf.getInitParameter("incr"));
+
+			
 			EmpleadoDTO e = (EmpleadoDTO) employeesService.obtenerEmpleado(idEmpleado);
 			resp.setContentType("text/html");
 			PrintWriter pw = resp.getWriter();
+			ServletContext sc = null;
+			sc = req.getServletContext();
+			int c = (int) sc.getAttribute("contador");
 			if (e==null)
 			{
 				pw.println("El empleado no existe");
 			}
 			else
 			{
+				pw.println("<p>");
+				pw.println("CONTADOR DE PETICIONES:"+c);
+				pw.println("</p>");
 				pw.println("<p>");
 				pw.println("NOMBRE: " + e.getFirst_name() + "<br>");
 				pw.println("APELLIDOS: " + e.getLast_name() + "<br>");

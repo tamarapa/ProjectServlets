@@ -1,5 +1,6 @@
 package comun;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
@@ -12,7 +13,7 @@ public class ImplServerContextListener implements ServletContextListener{
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
 		// TODO Auto-generated method stub
-		log.trace("ImplServerContextListener - contextDestroyed()");
+		
 		//System.out.println("ImplServerContextListener - contextDestroyed - Contexto destruido - "+arg0.getServletContext().toString());
 		/*
 		ServletContext sC = null;		
@@ -25,6 +26,7 @@ public class ImplServerContextListener implements ServletContextListener{
 			e.printStackTrace();
 		}
 		*/
+		
 	}
 
 	@Override
@@ -37,6 +39,10 @@ public class ImplServerContextListener implements ServletContextListener{
 		ServletContext servletContext = null;
 		servletContext = arg0.getServletContext();
 		servletContext.setAttribute("sf", sf);*/
+		ServletContext sc = null;
+		sc = arg0.getServletContext();
+		int c = 0;
+		sc.setAttribute("contador",c);		
 	}
 
 }
