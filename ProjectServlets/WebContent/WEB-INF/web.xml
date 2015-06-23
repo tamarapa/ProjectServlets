@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>ProjectServlets</display-name>
+	<welcome-file-list>
+		<welcome-file>indexServletEmpleado.html</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<description>Ejemplo de prueba</description>
+		<display-name>MiServlet</display-name>
+		<servlet-name>MiServlet</servlet-name>
+		<servlet-class>ClaseUno</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MiServlet</servlet-name>
+		<url-pattern>/MiServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description>Servlet Datos de Empleado</description>
+		<display-name>ServletDatosEmpleado</display-name>
+		<servlet-name>ServletDatosEmpleado</servlet-name>
+		<servlet-class>comun.ServletEmpleados</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDatosEmpleado</servlet-name>
+		<url-pattern>/DatosEmpleado</url-pattern>
+	</servlet-mapping>
+
+	<listener>
+		<listener-class>comun.ImplHttpSessionListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>comun.ImplServerContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>comun.ImplServletRequestListener</listener-class>
+	</listener>
+
+	<filter>
+		<filter-name>mifiltro</filter-name>
+		<filter-class>comun.ImplFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>mifiltro</filter-name>
+		<url-pattern>/DatosEmpleado</url-pattern> <!--Servicio llamado -->
+	</filter-mapping>
+
+</web-app>
