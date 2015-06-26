@@ -5,12 +5,49 @@
 <title>Mi primer proyecto</title>
 </head>
 <body class="page-home">
-
-<form action="MiServlet" method="post">
-	<p>Nombre:
-	<input type="text" name="nombre">
+	<a href="ejercicio1.html">EJERCICIO 1</a>
+	<p>
+		<form action="MiServlet" method="post">
+			Nombre:	<input type="text" name="nombre">	
+			<input type="submit" value="ENVIAR">
+		</form>
 	</p>
-	<input type="submit" value="ENVIAR">
-</form>
+	
+	<h3>EJERCICIO 2</h3>
+	<p>
+		<form action="AutenticacionUsuarioJDBC" method="post">
+			Nombre de usuario: <input type="text" name="nombre_usuario">
+			Pass: <input type="password" name="pass_usuario">
+			<input type="submit" value="ENTRAR">
+		</form>
+	</p>
+
+	<h3>EJERCICIO 3</h3>
+	<p>
+		<form action="DatosEmpleadoJDBC" method="get">
+			Id de empleado: <input type="text" name="id_empleado">
+			<input type="submit" value="BUSCAR CON JDBC">
+		</form>
+	</p>
+	<p>
+		<form action="DatosEmpleadoHIBERNATE" method="get">
+			Id de empleado: <input type="text" name="id_empleado">
+			<input type="submit" value="BUSCAR CON HIBERNATE">
+		</form>
+	</p>
+
+	<h3>EJERCICIO 4</h3>
+	<p>
+		<form action="ServletPruebaSesion" method="get">
+			<input type="submit" value="CREAR SESION">
+		</form>
+	</p>
+
+	<h3>EJERCICIO 5</h3>
+	<p>
+		<form action="ServletListarDepartamentos" method="get">
+			<input type="submit" value="DEPARTAMENTOS">
+		</form>
+	</p>
 </body>
 </html>

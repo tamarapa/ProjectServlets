@@ -21,7 +21,7 @@ public class ImplFilterJDBC implements Filter {
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
-		log.trace("ImplFilterJDBC - destroy()");
+		log.trace("se destruye el filtro");
 	}
 
 	@Override
@@ -36,13 +36,13 @@ public class ImplFilterJDBC implements Filter {
 		long tiempo1 = System.currentTimeMillis();
 		arg2.doFilter(arg0, arg1);
 		long tiempo2 = System.currentTimeMillis();
-		log.trace("ImplFilterJDBC - doFilter() - tiempo:"+(tiempo2-tiempo1));
+		log.trace("tiempo en ejecutarse el servlet:"+(tiempo2-tiempo1));
 	}
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
 		// TODO Auto-generated method stub
-		log.trace("ImplFilterJDBC - init()");
+		log.trace("se inicia el filtro");
 	}
 
 }

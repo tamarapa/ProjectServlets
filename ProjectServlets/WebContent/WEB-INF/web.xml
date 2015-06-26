@@ -4,16 +4,19 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
 	<display-name>ProjectServlets</display-name>
+	<!-- WELCOME FILE -->
 	<welcome-file-list>
-		<welcome-file>indexServletEmpleado.html</welcome-file>
-		<welcome-file>index.html</welcome-file>
+	    <welcome-file>index.html</welcome-file>
+		<welcome-file>logging.html</welcome-file>
+		<welcome-file>indexServletEmpleado.html</welcome-file>		
 		<welcome-file>index.htm</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>default.html</welcome-file>
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-
+	
+	<!-- SERVLET DE PRUEBA -->
 	<servlet>
 		<description>Ejemplo de prueba</description>
 		<display-name>MiServlet</display-name>
@@ -25,6 +28,7 @@
 		<url-pattern>/MiServlet</url-pattern>
 	</servlet-mapping>
 
+	<!-- SERVLET PARA INCREMENTAR EL SALARIO 1.2 -->
 	<servlet>
 		<description>Servlet Datos de Empleado JDBC</description>
 		<display-name>ServletDatosEmpleadoJDBC</display-name>
@@ -40,6 +44,7 @@
 		<url-pattern>/DatosEmpleadoJDBC</url-pattern>
 	</servlet-mapping>
 	
+	<!-- SERVLET PARA RECUPERAR LOS DATOS DE UN EMPLEADO -->
 	<servlet>
 		<description>Servlet Datos de Empleado HIBERNATE</description>
 		<display-name>ServletDatosEmpleadoHIBERNATE</display-name>
@@ -50,7 +55,41 @@
 		<servlet-name>ServletDatosEmpleadoHIBERNATE</servlet-name>
 		<url-pattern>/DatosEmpleadoHIBERNATE</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<description>Servlet Autenticación Usuario JDBC</description>
+		<display-name>ServletAutenticacionUsuarioJDBC</display-name>
+		<servlet-name>ServletAutenticacionUsuarioJDBC</servlet-name>
+		<servlet-class>comun.ServletUsuariosJDBC</servlet-class>	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletAutenticacionUsuarioJDBC</servlet-name>
+		<url-pattern>/AutenticacionUsuarioJDBC</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>Servlet Prueba Sesión</description>
+		<display-name>ServletPruebaSesion</display-name>
+		<servlet-name>ServletPruebaSesion</servlet-name>
+		<servlet-class>comun.ServletSesion</servlet-class>	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletPruebaSesion</servlet-name>
+		<url-pattern>/ServletPruebaSesion</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>Listar Departamentos</description>
+		<display-name>ServletListarDepartamentos</display-name>
+		<servlet-name>ServletListarDepartamentos</servlet-name>
+		<servlet-class>comun.ServletListarDepartamentos</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletListarDepartamentos</servlet-name>
+		<url-pattern>/ServletListarDepartamentos</url-pattern>
+	</servlet-mapping>
 
+	<!-- LISTENERS -->
 	<listener>
 		<listener-class>comun.ImplHttpSessionListener</listener-class>
 	</listener>
@@ -61,6 +100,7 @@
 		<listener-class>comun.ImplServletRequestListener</listener-class>
 	</listener>
 
+	<!-- FILTERS -->
 	<filter>
 		<filter-name>FiltroJDBC</filter-name>
 		<filter-class>comun.ImplFilterJDBC</filter-class>
@@ -78,8 +118,31 @@
 		<filter-name>FiltroHIBERNATE</filter-name>
 		<url-pattern>/DatosEmpleadoHIBERNATE</url-pattern>
 	</filter-mapping>	
+	
+	<filter>
+		<filter-name>FiltroLogin</filter-name>
+		<filter-class>comun.ImplFilterLogin</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>FiltroLogin</filter-name>
+		<url-pattern>/DatosEmpleadoJDBC</url-pattern>
+		<url-pattern>/DatosEmpleadoHIBERNATE</url-pattern>
+		<url-pattern>/ServletListarDepartamentos</url-pattern>
+		<url-pattern>/DatosEmpleadoHIBERNATE</url-pattern>
+		<url-pattern>/ServletPruebaSesion</url-pattern>
+		
+		
+		
+	</filter-mapping>	
+	
 	<context-param>
 	    <param-name>saludo</param-name>
 	    <param-value>hola</param-value>
 	</context-param>
+	
+	
+	<session-config>
+      <session-timeout>2</session-timeout>
+   </session-config>
+	
 </web-app>

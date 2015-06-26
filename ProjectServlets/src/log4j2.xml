@@ -5,10 +5,10 @@
 	</Properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss} %-5level %logger{36} - %msg%n" />
+            <PatternLayout pattern="%d{HH:mm:ss} %-5level %logger{36} %C %c %M - %msg%n" />
         </Console>
         <File name="MyFile" fileName="${log-path}/logProjectServlets.log" append="true">
-            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"/>
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss} %-5level %C %c %M %logger{36} - %msg%n"/>
         </File>
     </Appenders>
     <Loggers>

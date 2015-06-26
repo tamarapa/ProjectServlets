@@ -12,13 +12,13 @@ public class ImplServletRequestListener implements ServletRequestListener{
 	@Override
 	public void requestDestroyed(ServletRequestEvent arg0) {
 		// TODO Auto-generated method stub
-		log.trace("ImplServletRequestListener - requestDestroyed()");
+		log.trace("petición destriuda");
 	}
 
 	@Override
 	public void requestInitialized(ServletRequestEvent arg0) {
 		// TODO Auto-generated method stub
-		log.trace("ImplServletRequestListener - requestInitialized()");
+		log.trace("petición inicializada");
 	}
 
 }
