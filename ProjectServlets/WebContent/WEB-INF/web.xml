@@ -6,14 +6,10 @@
 	<display-name>ProjectServlets</display-name>
 	<!-- WELCOME FILE -->
 	<welcome-file-list>
+	    <welcome-file>indexServletsClase.html</welcome-file>
+	    <welcome-file>indexServletEmpleado.html</welcome-file>
 	    <welcome-file>index.html</welcome-file>
-		<welcome-file>logging.html</welcome-file>
-		<welcome-file>indexServletEmpleado.html</welcome-file>		
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>logging.html</welcome-file>				
 	</welcome-file-list>
 	
 	<!-- SERVLET DE PRUEBA -->
@@ -94,7 +90,7 @@
 		<listener-class>comun.ImplHttpSessionListener</listener-class>
 	</listener>
 	<listener>
-		<listener-class>comun.ImplServerContextListener</listener-class>
+		<listener-class>comun.ImplServletContextListener</listener-class>
 	</listener>
 	<listener>
 		<listener-class>comun.ImplServletRequestListener</listener-class>
