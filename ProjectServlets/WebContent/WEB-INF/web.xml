@@ -6,11 +6,26 @@
 	<display-name>ProjectServlets</display-name>
 	<!-- WELCOME FILE -->
 	<welcome-file-list>
+	    <welcome-file>index.html</welcome-file>
 	    <welcome-file>indexServletsClase.html</welcome-file>
 	    <welcome-file>indexServletEmpleado.html</welcome-file>
-	    <welcome-file>index.html</welcome-file>
+	    
 		<welcome-file>logging.html</welcome-file>				
 	</welcome-file-list>
+	
+	
+	
+	<!-- SERVLET QUE MUESTRA LA FECHA Y LA HORA -->
+	<servlet>
+		<description>Servlet Hora</description>
+		<display-name>ServletHora</display-name>
+		<servlet-name>ServletHora</servlet-name>
+		<servlet-class>comun.ServletHora</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletHora</servlet-name>
+		<url-pattern>/ServletHora</url-pattern>
+	</servlet-mapping>
 	
 	<!-- SERVLET DE PRUEBA -->
 	<servlet>
@@ -84,6 +99,28 @@
 		<servlet-name>ServletListarDepartamentos</servlet-name>
 		<url-pattern>/ServletListarDepartamentos</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<description>Servlet Cookies</description>
+		<display-name>ServletCookies</display-name>
+		<servlet-name>ServletCookies</servlet-name>
+		<servlet-class>comun.ServletCookies</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletCookies</servlet-name>
+		<url-pattern>/ServletCookies</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>Servlet Error</description>
+		<display-name>ServletError</display-name>
+		<servlet-name>ServletError</servlet-name>
+		<servlet-class>comun.ServletError</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletError</servlet-name>
+		<url-pattern>/ServletError</url-pattern>
+	</servlet-mapping>
 
 	<!-- LISTENERS -->
 	<listener>
@@ -140,5 +177,10 @@
 	<session-config>
       <session-timeout>2</session-timeout>
    </session-config>
+   
+	<error-page>
+		<error-code>404</error-code> 
+		<location>/ServletError</location> 
+	</error-page> 
 	
 </web-app>
