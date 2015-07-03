@@ -15,6 +15,18 @@
 	
 	
 	
+	<!-- SERVLET EMPLEADO BEAN -->
+	<servlet>
+		<description>ServletEjerBean</description>
+		<display-name>ServletEjerBean</display-name>
+		<servlet-name>ServletEjerBean</servlet-name>
+		<servlet-class>comun.ServletEjerBean</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEjerBean</servlet-name>
+		<url-pattern>/ServletEjerBean</url-pattern>
+	</servlet-mapping>
+	
 	<!-- SERVLET QUE MUESTRA LA FECHA Y LA HORA -->
 	<servlet>
 		<description>Servlet Hora</description>
