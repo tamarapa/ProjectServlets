@@ -1,7 +1,7 @@
-<%@page import="java.util.Random"%>
+<%@ page import="java.util.Random"%>
 <%@ page language='java' contentType='text/html;charset=iso-8859-1'%> 
 <%@ page import='java.util.Date' %> 
-	
+
 <html> 
 	<head> 
 		<title>Adivina el núumero</title> 
@@ -27,6 +27,7 @@
 	}
 	
 	%> 
+	
 	<body>
 	<%
 	
