@@ -26,6 +26,18 @@
 		<url-pattern>/ServletEjerBean</url-pattern>
 	</servlet-mapping>
 	
+	<!-- SERVLET EMPLEADO EXPRESSION LANGUAJE -->
+	<servlet>
+		<description>ServletEjerExprLang</description>
+		<display-name>ServletEjerExprLang</display-name>
+		<servlet-name>ServletEjerExprLang</servlet-name>
+		<servlet-class>comun.ServletEjerExprLang</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEjerExprLang</servlet-name>
+		<url-pattern>/ServletEjerExprLang</url-pattern>
+	</servlet-mapping>
+	
 	<!-- SERVLET QUE MUESTRA LA FECHA Y LA HORA -->
 	<servlet>
 		<description>Servlet Hora</description>
