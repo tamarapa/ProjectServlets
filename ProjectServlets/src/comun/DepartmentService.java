@@ -5,6 +5,7 @@ import java.util.List;
 
 import jdbc.DepartamentoDTO;
 import jdbc.DepartamentoJDBCDAO;
+import jdbc.EmpleadoDTO;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,6 +27,14 @@ public class DepartmentService {
 		ArrayList<DepartamentoDTO> listaDepartamento = new ArrayList<DepartamentoDTO>();
 		listaDepartamento.addAll(this.eDAO.obtenerDepartamentos());
 		return listaDepartamento;
+	}
+	
+	public ArrayList<EmpleadoDTO> listarEmpleados(String id) {
+		// TODO Auto-generated method stub
+		log.trace("entra en el método listarEmpleados");
+		ArrayList<EmpleadoDTO> listaEmpleados = new ArrayList<EmpleadoDTO>();
+		listaEmpleados.addAll(this.eDAO.obtenerEmpleados(id));
+		return listaEmpleados;
 	}
 
 }

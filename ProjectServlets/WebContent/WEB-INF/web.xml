@@ -8,8 +8,7 @@
 	<welcome-file-list>
 	    <welcome-file>index.html</welcome-file>
 	    <welcome-file>indexServletsClase.html</welcome-file>
-	    <welcome-file>indexServletEmpleado.html</welcome-file>
-	    
+	    <welcome-file>indexServletEmpleado.html</welcome-file>	    
 		<welcome-file>logging.html</welcome-file>				
 	</welcome-file-list>
 	
@@ -113,6 +112,17 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<description>Listar Empleados Por Departamento</description>
+		<display-name>ServletListarEmpleadosPorDepartamento</display-name>
+		<servlet-name>ServletListarEmpleadosPorDepartamento</servlet-name>
+		<servlet-class>comun.ServletListarEmpleadosPorDepartamento</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletListarEmpleadosPorDepartamento</servlet-name>
+		<url-pattern>/ServletListarEmpleadosPorDepartamento</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<description>Servlet Cookies</description>
 		<display-name>ServletCookies</display-name>
 		<servlet-name>ServletCookies</servlet-name>
@@ -172,7 +182,6 @@
 		<filter-name>FiltroLogin</filter-name>
 		<url-pattern>/DatosEmpleadoJDBC</url-pattern>
 		<url-pattern>/DatosEmpleadoHIBERNATE</url-pattern>
-		<url-pattern>/ServletListarDepartamentos</url-pattern>
 		<url-pattern>/DatosEmpleadoHIBERNATE</url-pattern>
 		<url-pattern>/ServletPruebaSesion</url-pattern>
 		

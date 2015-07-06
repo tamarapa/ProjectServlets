@@ -13,25 +13,26 @@ import org.apache.logging.log4j.Logger;
 
 
 import jdbc.DepartamentoDTO;
+import jdbc.EmpleadoDTO;
 
 /**
  * 
  * @author Tamara P.A.
  *
  */
-public class ServletListarDepartamentos extends HttpServlet{
+public class ServletListarEmpleadosPorDepartamento extends HttpServlet{
 	private final static Logger log = LogManager.getRootLogger();
 	
 	//doGet
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		
-		DepartmentService departmentService = new DepartmentService();					
-		List<DepartamentoDTO> listaDepartamentos = departmentService.listarDepartamentos();
-		req.setAttribute("listaDepartamentos", listaDepartamentos);
+		log.trace("ENTRO A doGet del ServletListarEmpleadosPorDepartamento");
+		DepartmentService departmentService = new DepartmentService();
+		List<EmpleadoDTO> listaEmpleados = departmentService.listarEmpleados(req.getParameter("departamento"));
+		req.setAttribute("listaEmpleados", listaEmpleados);
 		//aqui habría que utilizar el dispatcher y el forward, MODIFICARLO
-		req.getRequestDispatcher("ejercicio10_listaDepartamentosVISTA.jsp").forward(req, resp);		
+		req.getRequestDispatcher("ejercicio10_listaEmpleadosPorDepartamentoVISTA.jsp").forward(req, resp);		
 	}
 	//doPost
 	@Override
