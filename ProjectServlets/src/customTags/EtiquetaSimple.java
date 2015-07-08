@@ -13,10 +13,10 @@ public class EtiquetaSimple extends SimpleTagSupport{
 	@Override
 	public void doTag() throws JspException, IOException {
 		//sSystem.out.println(getJspBody().toString());
-		getJspContext().getOut().println("llamando a Hola mundo!");
+		getJspContext().getOut().println("EtiquetaSimple.jsp: doTag()");
 		if (null!=nombre)
 		{
-			getJspContext().getOut().println("Llama : " + nombre);
+			getJspContext().getOut().println("variable nombre : " + nombre);
 		}
 	}
 

@@ -8,15 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <p>
-ETIQUETA SIMPLE! <br>
-<mitag:holaMundo nombre="Raul"/><br>
-<mitag:nveces  num="3">cuerpo de la etiqueta</mitag:nveces><br>
-<mitag:atrDinamico  num="5">${count}</mitag:atrDinamico><br>
-</p>
-<p>
-<br>ETIQUETA CLASSIC! <br>
-<mitag:classic  num="5" idcountry="${count}">${count}</mitag:classic>
+<br>LISTA DE EMPLEADOS POR DEPARTAMENTO <br>
+<mitag:departamento  id="80"></mitag:departamento>
 </p>
 </body>
 </html>

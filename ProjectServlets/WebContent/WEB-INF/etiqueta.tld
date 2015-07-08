@@ -7,6 +7,9 @@
     <tlib-version>1.0</tlib-version>
     <short-name>mt</short-name>
     <uri>esto es solo un id lógico</uri>
+    
+    
+    
     <tag>
         <description>Mi Hola Mundo Tag!</description>
         <name>holaMundo</name>
@@ -17,6 +20,9 @@
 			<required>false</required>
 		</attribute>
     </tag>
+    
+    
+    
     <tag>
         <description>Hacemos un bucle de N veces</description>
         <name>nveces</name>
@@ -27,6 +33,10 @@
 			<required>true</required>
 		</attribute>
     </tag>
+    
+    
+    
+    
     <tag>
         <description>Hacemos un bulce y seteamos el valor de una EL</description>
         <name>atrDinamico</name>
@@ -38,6 +48,10 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>
+    
+    
+    
+    
     <tag>
         <description>Hacemos un bulce y seteamos el valor de una EL</description>
         <name>classic</name>
@@ -51,7 +65,21 @@
         <attribute>
             <name>idcountry</name>
             <required>true</required>
-            <rtexprvalue>true</rtexprvalue>
+            <rtexprvalue>true</rtexprvalue><!-- si utiliza una expresión dinamica -->
         </attribute>
     </tag>
+    
+    <tag>
+        <description>Mostramos una lista de empleados según el id de un departamento</description>
+        <name>departamento</name>
+        <tag-class>customTags.EtiquetaSimpleEmpleadosPorDepartamento</tag-class>
+        <body-content>scriptless</body-content> <!-- Es un valor dinámico -->
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+        </attribute>
+    </tag>
+    
+    
+    
 </taglib>

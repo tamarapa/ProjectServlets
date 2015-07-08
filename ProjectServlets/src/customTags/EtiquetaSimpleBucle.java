@@ -20,7 +20,7 @@ public class EtiquetaSimpleBucle extends SimpleTagSupport{
 		getJspContext().getOut().println("El body es = "+bodyamodificar +" ese es el body");
 		
 		for (int i = 0; i < num; i++) {
-			
+			//si le paso null a invoke imprime el valor de la etiqueta
 			getJspBody().invoke(null);
 			
 		}
