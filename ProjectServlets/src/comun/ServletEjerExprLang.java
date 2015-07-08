@@ -26,14 +26,15 @@ import jdbc.EmpleadoJDBCDAO;
  * @author Tamara P.A.
  *
  */
-public class ServletEjerBean extends HttpServlet{
+public class ServletEjerExprLang extends HttpServlet{
 	private final static Logger log = LogManager.getRootLogger();
 	//doGet
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		//CONTROLADOR
-		
+		System.out.println("HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		log.trace("ENTRA");
 		//recibe la petición y pide a la capa de negocio la info del empleado,
 		//esta devolverá un bean de tipo empleado
 		String idEmpleado = req.getParameter("idEmpleado");
@@ -46,7 +47,7 @@ public class ServletEjerBean extends HttpServlet{
 			ServletContext sc = req.getServletContext();
 			sc.setAttribute("empleadoExprLang", eDTO);
 			//aqui habría que utilizar el dispatcher y el forward, MODIFICARLO
-			req.getRequestDispatcher("ejercicio11_empleadoExpreLangVISTA.jsp").forward(req, resp);
+			req.getRequestDispatcher("ejercicio11_empleadoExprLangVISTA.jsp").forward(req, resp);
 		}
 		else
 		{

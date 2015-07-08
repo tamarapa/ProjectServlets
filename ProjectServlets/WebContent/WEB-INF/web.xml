@@ -38,6 +38,30 @@
 		<url-pattern>/ServletEjerExprLang</url-pattern>
 	</servlet-mapping>
 	
+	<!-- SERVLET EMPLEADO EXPRESSION LANGUAJE JSTL-->
+	<servlet>
+		<description>ServletListarDepartamentosElJstl</description>
+		<display-name>ServletListarDepartamentosElJstl</display-name>
+		<servlet-name>ServletListarDepartamentosElJstl</servlet-name>
+		<servlet-class>comun.ServletListarDepartamentosElJstl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletListarDepartamentosElJstl</servlet-name>
+		<url-pattern>/ServletListarDepartamentosElJstl</url-pattern>
+	</servlet-mapping>
+	
+	<!-- SERVLET EMPLEADO EXPRESSION LANGUAJE JSTL-->
+	<servlet>
+		<description>ServletListarEmpleadosPorDepartamentoElJstl</description>
+		<display-name>ServletListarEmpleadosPorDepartamentoElJstl</display-name>
+		<servlet-name>ServletListarEmpleadosPorDepartamentoElJstl</servlet-name>
+		<servlet-class>comun.ServletListarEmpleadosPorDepartamentoElJstl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletListarEmpleadosPorDepartamentoElJstl</servlet-name>
+		<url-pattern>/ServletListarEmpleadosPorDepartamentoElJstl</url-pattern>
+	</servlet-mapping>
+	
 	<!-- SERVLET QUE MUESTRA LA FECHA Y LA HORA -->
 	<servlet>
 		<description>Servlet Hora</description>
